@@ -1,3 +1,0 @@
-38ad5ff HEAD@{0}: commit: Readme
-4e34d91 HEAD@{1}: checkout: moving from master to main
-dc4c7eb HEAD@{2}: commit (initial): add
