@@ -7,7 +7,7 @@
 
 **Интро**
 
-Четвертая проектная работа Яндекс Практикума
+Четвертая проектная работа Яндекс Практикума (Базовый JS)
 
 **Figma**
 
@@ -15,3 +15,4 @@
 
 **Ссылка на проект**  (https://viktoriabalandina.github.io/mesto/)
 
+https://github.com/ViktoriaBalandina/mesto.git

@@ -1,7 +1,7 @@
 .elements__item {
-  align-items: center;
   max-width: 282px;
   width: 100%;
+  align-items: center;
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;

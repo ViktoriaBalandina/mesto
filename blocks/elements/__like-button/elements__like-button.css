@@ -1,10 +1,10 @@
 .elements__like-button {
     min-width: 22px;
+    background-color: #fff;
     height: 19px;
     padding: 0;
     margin-left: 30px;
     border: none;
-    background-color: #fff;
     transition: opacity 0.6s linear;
     cursor: pointer;
 }
