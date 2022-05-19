@@ -1,52 +1,33 @@
-// ButtonStorage
-const profileEditButton = document.querySelector('button.profile__edit-button')
-const allClosePopupButton = document.querySelectorAll('button.popup__close-btn')
-const profileSavePopupButton = document.querySelector('button.popup__submit-btn')
-const profileAddButton = document.querySelector('button.profile__add-button')
+const popup = document.querySelector('.popup'), 
+popupToggle = document.querySelector('.profile__edit-button'), 
+popupClose = document.querySelector('.popup__closed'), 
+popupName = document.querySelector('.popup__input_name'), 
+popupProfession = document.querySelector('.popup__input_profession'),
+popupSubmit = document.querySelector('.popup__submit-btn'); 
+ 
+const popupTitle = document.querySelector('.profile__name'),    
+popupSubtitle = document.querySelector('.profile__text'); 
+//открыть
+function openPopup() { 
+    popup.classList.add('popup_opened'); 
+    popupName.value = popupTitle.textContent; 
+    popupProfession.value = popupSubtitle.textContent; 
+};
+ 
+//закрть
+function closePopup() { 
+    popup.classList.remove('popup_opened'); 
+};
 
-//Popup Storage
-const profilePopupWindow = document.querySelector('div.popup__profile-window')
-const overlayPopupWindow = document.querySelector('div.popup__overlay')
+let popupForm = document.querySelector('.popup__form'); 
 
-//input
-const profileLineUsername = document.querySelector('h1.profile__name')
-const profileLineDescription = document.querySelector('p.profile__text')
-const profileInputName = document.querySelector('input#name')
-const profileInputAbout = document.querySelector('input#about')
+function formSubmitHandler (evt) { 
+evt.preventDefault();  
+popupTitle.textContent = popupName.value; 
+popupSubtitle.textContent = popupProfession.value; 
+closePopup();
+};
 
-//function Storage
-const openDialogWindow = (popup) => {
-    overlayPopupWindow.classList.remove('is-closed')
-    popup.classList.add('is-active')
-}
-const closeDialodWindow = (popup) => {
-    overlayPopupWindow.classList.add('is-closed')
-    popup.classList.remove('is-active')
-}
-const closeActiveDialogWindow = () => {
-    overlayPopupWindow.classList.add('is-closed')
-    document.querySelectorAll('.is-active').forEach((activeWindow) => activeWindow.classList.remove('is-active'))
-}
-profileEditButton.addEventListener('click', () => {
-    openDialogWindow(profilePopupWindow)
-    profileInputName.value = profileLineUsername.innerText
-    profileInputAbout.value = profileLineDescription.innerText
-})
-profileSavePopupButton.addEventListener('click', () => {
-    profileLineUsername.innerText = profileInputName.value
-    profileLineDescription.innerText = profileInputAbout.value
-    closeDialodWindow(profilePopupWindow)
-})
-allClosePopupButton.forEach((buttonCurrent) => {
-    buttonCurrent.addEventListener('click', () => closeActiveDialogWindow() )
-})
-
-document.querySelectorAll('button').forEach((buttonCurrent) => {
-    buttonCurrent.addEventListener('click', (evt) => evt.preventDefault() )
-})
-
-document.addEventListener('mousedown', (evt) => {
-    const activePopupWindow = document.querySelector('.popup.is-active')
-    if (activePopupWindow && !activePopupWindow.contains(evt.target))
-        closeActiveDialogWindow();
-})
+popupForm.addEventListener('submit', formSubmitHandler); 
+popupClose.addEventListener('click', closePopup); 
+popupToggle.addEventListener('click', openPopup); 

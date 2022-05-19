@@ -1,0 +1,27 @@
+.popup__input {
+  padding-bottom: 13px;
+  border-style: inset;
+  width: 99%;
+  border: none;
+  display: inline-block;
+  border-bottom: 1px solid #545454;
+  font-family: 'Inter', Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  margin-bottom: 29.7px;
+  color: #000000;
+}
+
+@media screen and (max-width: 600px) {
+  .popup__input_profession {
+    margin-bottom: 45px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .popup__input_name {
+    margin-bottom: 30px;
+  }
+}
