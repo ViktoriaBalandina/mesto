@@ -3,9 +3,10 @@
   height: 32px;
   position: absolute;
   right: -40px;
+  padding: 0;
   top: -40px;
   border: none;
-  background-color: inherit;
+  background-size: 32px 32px;
   background: url('../../../image/popup/picture.svg') center no-repeat;
   cursor: pointer;
 }
